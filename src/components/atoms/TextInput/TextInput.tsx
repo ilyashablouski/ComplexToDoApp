@@ -1,4 +1,4 @@
-import React, { LegacyRef, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const TextInput = () => {
   const inputRef = useRef<HTMLInputElement>(null);
