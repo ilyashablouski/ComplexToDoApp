@@ -17,9 +17,9 @@ function App() {
 
       <div className="list-wrapper">
         <ul className="list">
-          <li className="list-item">
+          <li className="list-item" style={{ listStyle: 'none' }}>
             <span className="list-item__text">Some text</span>
-            <Button children={<TrashIcon />} />
+            <Button children={<TrashIcon />} color="red" />
           </li>
         </ul>
       </div>

@@ -2,11 +2,16 @@ import React from 'react';
 
 interface IProps {
   children: React.ReactNode;
+  color?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, IProps>(
-  ({ children }, ref) => {
-    return <button ref={ref}>{children}</button>;
+  ({ children, color }, ref) => {
+    return (
+      <button ref={ref} style={{ color: color ?? '#000000' }}>
+        {children}
+      </button>
+    );
   },
 );
 
