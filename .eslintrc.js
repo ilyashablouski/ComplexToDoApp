@@ -2,7 +2,8 @@
 
 module.exports = {
   extends: ['react-app', 'plugin:prettier/recommended'],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'unused-imports'],
+  ignorePatterns: ['.eslintrc.js'],
   env: {
     browser: true,
     node: true,
@@ -30,6 +31,18 @@ module.exports = {
           'sibling',
           'index',
         ],
+      },
+    ],
+    // eslint additional rules
+    'no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
       },
     ],
   },
