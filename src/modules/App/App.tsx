@@ -5,10 +5,10 @@ import './App.style.scss';
 import TextInput from '@/components/TextInput';
 import Button from '@/components/Button';
 import List from '@/components/List';
-import { getListItemsJson } from '@/services/requests';
+import { getListItemsJson, IListItemsPayload } from '@/services/requests';
 
 function App() {
-  const [listItems, setListItems] = useState<Array<{}>>([]);
+  const [listItems, setListItems] = useState<IListItemsPayload[] | null>(null);
 
   useEffect(() => {
     getListItemsJson().then((items) => {
@@ -26,7 +26,7 @@ function App() {
       </div>
 
       <div className="app__list">
-        <List />
+        <List listItems={listItems} />
       </div>
 
       <Link className="app__link" href="https://reactjs.org" isTarget={true}>
