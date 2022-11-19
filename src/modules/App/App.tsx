@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Link from '@/components/Link';
 import './App.style.scss';
 import TextInput from '@/components/TextInput';
 import Button from '@/components/Button';
 import List from '@/components/List';
+import { getListItemsJson } from '@/services/requests';
 
 function App() {
-  const [listItems, setListItem] = useState<Array<{}>>([]);
+  const [listItems, setListItems] = useState<Array<{}>>([]);
+
+  useEffect(() => {
+    getListItemsJson().then((items) => {
+      setListItems(items);
+      console.log(items);
+    });
+  }, []);
+
   return (
     <div className="app">
       <div className="app__form-group">
