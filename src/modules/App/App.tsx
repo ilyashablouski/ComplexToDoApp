@@ -8,7 +8,7 @@ import List from '@/components/List';
 import { getListItemsJson, IListItemsPayload } from '@/services/requests';
 
 function App() {
-  const [listItems, setListItems] = useState<IListItemsPayload[] | null>(null);
+  const [listItems, setListItems] = useState<IListItemsPayload[] | null>([]);
 
   useEffect(() => {
     getListItemsJson().then((items) => {

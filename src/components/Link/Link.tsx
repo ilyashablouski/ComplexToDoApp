@@ -18,4 +18,4 @@ const Link = ({ className, href, isTarget, children }: ILinkProps) => (
   </a>
 );
 
-export default Link;
+export default React.memo(Link);
